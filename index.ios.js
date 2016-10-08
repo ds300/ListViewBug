@@ -43,7 +43,7 @@ const initialData = fromJS([
   },
   {
     name: "Thing G",
-    time: moment().add(2, 'd'),
+    time: moment().add(3, 'd'),
   },
 ]);
 
@@ -56,8 +56,8 @@ function groupByDay(data) {
   data.forEach((item, i) => {
     const time = item.get('time');
     const group =
-      time.isBefore(now) ? 'In the past'
-      : now.isSame(time, 'day') ? 'Today'
+      now.isSame(time, 'day') ? 'Today'
+      : time.isBefore(now) ? 'In the past'
       : tomorrow.isSame(time, 'day') ? 'Tomorrow'
       : 'Later';
 
