@@ -1,0 +1,3 @@
+rootProject.name = 'ListViewBug'
+
+include ':app'
